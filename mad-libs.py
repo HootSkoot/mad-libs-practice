@@ -36,17 +36,19 @@ def process_madlib(mad_lib):
     #term_length refers to the longest mad libs term (VERB, ADVERB)
     count = 0
     term_length = 4
-    while count <= len(mad_lib):
+    while count < len(mad_lib):
         #catching if the box length would exceed mad_lib string length first
-        if count == len(mad_lib) - term_length:
-            #loop to shrink the box
-            while term_length > 0:
-                #box shrinks against length limit
-                shrink_box = mad_lib[ -term_length : len(mad_lib) ]
-                processed += word_transformer(shrink_box)
-                term_length -= 1
-            #end fucntion
-            return processed
+        #not needed, but did it for practice
+        #
+        #if count == len(mad_lib) - term_length:
+        #    #loop to shrink the box
+        #    while term_length > 0:
+        #        #box shrinks against length limit
+        #        shrink_box = mad_lib[ -term_length : len(mad_lib) ]
+        #        processed += word_transformer(shrink_box)
+        #        term_length -= 1
+        #    #end fucntion
+        #    return processed
         #print count
         slice = mad_lib[ count : count + term_length]
         #print slice
